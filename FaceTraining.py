@@ -17,6 +17,7 @@
 # AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
 import cv2
 import os
 import numpy as np
@@ -27,12 +28,13 @@ recognizer = cv2.face.LBPHFaceRecognizer_create()
 face_detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 path = 'dataset'
 
+
 # Function to read the images in the dataset, convert them to grayscale values, and return samples
 def getImagesAndLabels(path):
-    faceSamples=[]
+    faceSamples = []
     ids = []
     unique_ids = set()
-    
+
     for file_name in os.listdir(path):
         if file_name.endswith(".jpg"):
             id = int(file_name.split(".")[1])
@@ -42,15 +44,17 @@ def getImagesAndLabels(path):
             faces = face_detector.detectMultiScale(img)
 
             for (x, y, w, h) in faces:
-                faceSamples.append(img[y:y+h, x:x+w])
+                faceSamples.append(img[y:y + h, x:x + w])
                 ids.append(id)
                 unique_ids.add(id)
 
     return faceSamples, ids, unique_ids
 
+
 faces, ids, unique_ids = getImagesAndLabels(path)
 
-#Function To Train The Recognizer Using .yml File
+
+# Function To Train The Recognizer Using .yml File
 def trainRecognizer(faces, ids):
     recognizer.train(faces, np.array(ids))
     recognizer.write('trainer/trainer.yml')
