@@ -10,7 +10,7 @@ This project is a comprehensive face recognition system, involving data collecti
 - Raspbian Or Other Linux Distro
 - Python
 - numpy
-- pencv-python
+- opencv-python
 - picamera2
 - pencv-contrib-python
 - pillow
