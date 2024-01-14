@@ -43,7 +43,7 @@ python FaceDataset.py --user\_id [user\_id] --dataset\_path [path]
 python FaceTraining.py --dataset\_path [path] --model\_path [path]]
 
 - **Key Features** :
-  - Feature extraction using techniques like Eigenfaces or LBPH (Local Binary Patterns Histograms).
+  - Feature extraction using techniques like LBPH (Local Binary Patterns Histograms).
   - Classifier training, commonly with algorithms like SVM (Support Vector Machine) or neural networks.
   - Model serialization for later use in recognition tasks.
 
