@@ -12,7 +12,7 @@ This project is a comprehensive face recognition system, involving data collecti
 - numpy
 - opencv-python
 - picamera2
-- pencv-contrib-python
+- opencv-contrib-python
 - pillow
 
 **Installation**
