@@ -91,9 +91,9 @@ while True:
             predicted_id = "Unknown Entity"
             confidence = f"{100 - confidence:.0f}%"
 
-    # Display Name And Confidence Of The Recognized Face
-    cv2.putText(current_frame, str(name), name_position, cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
-    cv2.putText(current_frame, str(confidence), confidence_position, cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 1)
+        # Display Name And Confidence Of The Recognized Face
+        cv2.putText(current_frame, str(name), name_position, cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
+        cv2.putText(current_frame, str(confidence), confidence_position, cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 1)
 
     exit_text = "Press 'q' To Exit"
     exit_text_size = cv2.getTextSize(exit_text, cv2.FONT_HERSHEY_SIMPLEX, 1, 1)[0]
